@@ -1,0 +1,532 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+:root {
+  --ff: "Montserrat", sans-serif;
+  --colorp: #191a23;
+  --colorp2: #f3f3f3;
+  --colora: #b9ff66;
+  --colorbody: #ffffff;
+  --h1: 54px/60px var(--ff);
+  --h2: bold 36px/48px var(--ff);
+  --h3: bold 24px/36px var(--ff);
+  --links: 18px/18px var(--ff);
+  --p: 16px/24px var(--ff);
+  --p1: 20px/30px var(--ff);
+  --p2: 36px/48px var(--ff);
+  --subtext: 12px/20px var(--ff);
+  --transition: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  text-wrap: balance;
+  font: var(--p);
+  color: var(--colorp);
+  background-color: var(--colorbody);
+}
+h1 {
+  font: var(--h1);
+}
+h2 {
+  font: var(--h2);
+}
+h3 {
+  font: var(--h3);
+}
+p {
+  font: var(--p);
+}
+a {
+  text-decoration: none;
+  color: var(--colorp);
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.btn,
+button {
+  background-color: var(--colorp);
+  color: var(--colorp2);
+  font-size: var(--p2);
+  padding: 20px 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.btn,
+button:hover {
+  background-color: var(--colora);
+  color: var(--colorp);
+  transform: translateY(-2px);
+}
+
+.label-green {
+  background-color: var(--colora);
+  color: var(--colorp);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* hide the nav close icon by default (only show in mobile menu) */
+.nav__close {
+  display: none;
+}
+
+/* hide nav CTA by default (only show inside mobile menu) */
+.nav__cta {
+  display: none;
+}
+.nav__toggle {
+  display: none;
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+  column-gap: 80px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  max-width: 480px;
+  align-items: flex-start;
+}
+
+.hero-image {
+  max-width: 500px;
+}
+
+/* mobile copy is hidden by default; shown only in the mobile media query */
+.hero-image--mobile {
+  display: none;
+}
+
+.sponsor-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.sponsor-container img {
+  width: 100px;
+  max-width: none;
+
+  object-fit: contain;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 70px 0;
+}
+
+.heading p {
+  font-size: var(--p2);
+  max-width: 700px;
+}
+
+.services {
+  padding-bottom: 70px;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--colorp);
+  border-bottom: #191a23 8px solid;
+  background-color: var(--colorp2);
+  border-radius: 45px;
+  overflow: hidden;
+  padding: 50px 50px;
+}
+
+.card-text {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 80px;
+}
+.card-text .title h3 {
+  background-color: var(--colora);
+  color: var(--colorp);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: inline-block;
+}
+.card-text h3 span {
+  background-color: var(--colora);
+}
+
+.card-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-image {
+  max-width: 200px;
+  margin-left: 30px;
+}
+
+.card--green {
+  background-color: var(--colora);
+}
+
+.card--green .title h3 {
+  background-color: var(--colorp2);
+  color: var(--colorp);
+}
+
+.card--black {
+  background-color: var(--colorp);
+}
+
+.card--black .title h3 {
+  background-color: var(--colorp2);
+  color: var(--colorp);
+}
+
+.card--black .card-link span {
+  color: var(--colorp2);
+}
+
+/* Case-study: separar texto del svg en el enlace "Learn more" */
+.cta-section {
+  padding: 79px 0;
+}
+
+.cta-container {
+  display: flex;
+  height: 347px;
+  padding: 0 60px;
+  background-color: var(--colorp2);
+  border-radius: 45px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.cta-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.cta-img {
+  max-width: 400px;
+  position: relative;
+}
+
+.case-study {
+  padding-bottom: 70px;
+}
+
+.cases {
+  padding: 70px 60px;
+  display: flex;
+  height: 347px;
+  /* gap: 20px; */
+  background-color: var(--colorp);
+  color: var(--colorp2);
+  border-radius: 45px;
+}
+
+.case {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 400px;
+  height: 200px;
+  border-right: #f3f3f3 1px solid;
+  gap: 20px;
+}
+
+.case:last-child {
+  border-right: none;
+}
+
+.case a {
+  color: var(--colora);
+}
+
+.case a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* espacio entre texto y SVG */
+}
+
+.case a svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* mobile styles */
+@media screen and (max-width: 680px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .header-container {
+    padding: 20px 0;
+  }
+
+  .logo {
+    min-width: 120px;
+  }
+
+  .nav__logo {
+    font-weight: 700;
+  }
+  .nav__toggle {
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  /* hide header CTA on mobile (we show CTA inside the menu) */
+  .cta {
+    display: none;
+  }
+
+  nav ul {
+    /* stack nav links vertically on mobile */
+    flex-direction: column;
+    width: 50%;
+    gap: 16px;
+    position: fixed;
+    right: 0;
+    top: -100%;
+    height: 100%;
+    background-color: var(--colora);
+    color: var(--colorp2);
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: 0.4s;
+    /* ensure nav overlays other stacked elements (carousel hints, gradients, etc.) */
+    z-index: 999;
+    pointer-events: auto;
+  }
+
+  /* only show close button when menu is open */
+  #nav-menu.show-menu .nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--colorp);
+    cursor: pointer;
+    display: block;
+    z-index: 1000;
+  }
+
+  /* show menu: when nav (#nav-menu) gets .show-menu, bring the inner UL into view */
+  #nav-menu.show-menu ul {
+    top: 0;
+    /* make sure the visible panel is on top of other mobile elements */
+    z-index: 999;
+  }
+
+  .hero-container {
+    /* stack content vertically on mobile */
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  /* hide the desktop hero image on small screens */
+  .hero-image {
+    display: none;
+  }
+
+  /* show the mobile image placed inside .hero-text and hide the desktop one
+     Note: .hero-image--mobile must come after .hero-image rule because the
+     element carries both classes (hero-image hero-image--mobile). */
+  .hero-image--mobile {
+    display: block;
+    max-width: 80%;
+    margin: 8px 0 0 0;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    align-items: center;
+  }
+  .hero-text button {
+    width: 100%;
+  }
+
+  .card-image {
+    min-width: 120px;
+  }
+
+  /* Simple, low-cost carousel for .cases using CSS scroll-snap (mobile only) */
+  .cases {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    height: auto; /* allow content height */
+    position: relative;
+  }
+
+  /* hide scrollbar on WebKit but keep native scrolling */
+  .cases::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cases .case {
+    flex: 0 0 85%; /* one card per view with breathing room */
+    max-width: 85%;
+    scroll-snap-align: start;
+    border-right: none; /* remove desktop separator */
+    background: transparent;
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* smaller phones: make slide take almost full width */
+  @media (max-width: 420px) {
+    .cases .case {
+      flex: 0 0 92%;
+      max-width: 92%;
+    }
+  }
+
+  /* subtle edge gradients to hint horizontal scroll */
+  .cases::before,
+  .cases::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 44px;
+    pointer-events: none;
+    z-index: 6;
+  }
+  .cases::before {
+    left: 0;
+    background: linear-gradient(to right, #191a23 0%, rgba(25, 26, 35, 0) 100%);
+  }
+  .cases::after {
+    right: 0;
+    background: linear-gradient(to left, #191a23 0%, rgba(25, 26, 35, 0) 100%);
+  }
+
+  .case-study {
+    position: relative;
+  }
+  .carousel-hint {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--colorp2);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    line-height: 1;
+    z-index: 8;
+    pointer-events: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .sponsor-container {
+    display: grid;
+    /* 2 filas x 3 columnas en móvil (6 items) */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 16px 12px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .cta-section {
+    padding: 50px 0;
+  }
+  .cta-container {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .cta-text {
+    max-width: 100%;
+  }
+  .cta-text button {
+    width: 100%;
+  }
+  .cta-img {
+    display: none;
+  }
+}
