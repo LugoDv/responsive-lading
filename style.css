@@ -346,6 +346,7 @@ nav ul {
     font-weight: 700;
   }
   .nav__toggle {
+    display: block;
     font-size: 1.25rem;
     cursor: pointer;
   }
